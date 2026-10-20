@@ -1,0 +1,161 @@
+/* ==========================================
+   Services Section — Horizontal Scroll
+   ========================================== */
+
+.services {
+  padding: 0;
+}
+
+.services__header {
+  padding: var(--space-section) 0 var(--space-3xl);
+}
+
+.services__title {
+  margin-bottom: var(--space-md);
+}
+
+.services__subtitle {
+  max-width: 500px;
+}
+
+/* Horizontal Scroll Container */
+.services__scroll-wrapper {
+  overflow: hidden;
+}
+
+.services__scroll-track {
+  display: flex;
+  gap: var(--space-lg);
+  padding: 0 var(--container-padding) var(--space-section);
+  will-change: transform;
+}
+
+/* Service Card */
+.service-card {
+  flex: 0 0 420px;
+  min-height: 480px;
+  padding: var(--space-2xl);
+  background: var(--bg-dark-secondary);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--gradient-chrome);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.service-card:hover {
+  border-color: #3A3A3A;
+  transform: translateY(-4px);
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.service-card__number {
+  font-family: var(--font-heading);
+  font-size: var(--text-6xl);
+  font-weight: 700;
+  color: rgba(255,255,255,0.04);
+  position: absolute;
+  top: var(--space-lg);
+  right: var(--space-lg);
+  line-height: 1;
+}
+
+.service-card__icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: var(--space-xl);
+  color: var(--accent);
+}
+
+.service-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+  color: var(--text-light);
+}
+
+.service-card__description {
+  font-size: var(--text-base);
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: var(--space-xl);
+}
+
+.service-card__features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.service-card__feature {
+  padding: 0.4rem 0.8rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  font-family: var(--font-heading);
+  letter-spacing: 0.03em;
+}
+
+/* Progress bar */
+.services__progress {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 0 var(--container-padding);
+  margin-top: var(--space-lg);
+}
+
+.services__progress-bar {
+  flex: 1;
+  height: 2px;
+  background: var(--border-dark);
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.services__progress-fill {
+  height: 100%;
+  background: var(--gradient-chrome);
+  border-radius: 1px;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+.services__progress-text {
+  font-family: var(--font-heading);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  min-width: 3rem;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .service-card {
+    flex: 0 0 320px;
+    min-height: 400px;
+    padding: var(--space-xl);
+  }
+}

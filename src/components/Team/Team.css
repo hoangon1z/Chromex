@@ -1,0 +1,108 @@
+/* ==========================================
+   Team Section
+   ========================================== */
+
+.team__header {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.team__title {
+  margin-bottom: var(--space-md);
+}
+
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+
+/* Team Card */
+.team-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  cursor: pointer;
+  background: var(--bg-dark-secondary);
+  border: 1px solid var(--border-dark);
+}
+
+.team-card__visual {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%);
+}
+
+.team-card__initials {
+  font-family: var(--font-heading);
+  font-size: var(--text-5xl);
+  font-weight: 700;
+  background: var(--gradient-chrome);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: transform var(--transition-spring);
+}
+
+.team-card:hover .team-card__initials {
+  transform: scale(1.1);
+}
+
+.team-card__info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-xl) var(--space-md);
+  background: linear-gradient(0deg, rgba(10,10,10,0.95) 0%, transparent 100%);
+  transform: translateY(30%);
+  transition: transform var(--transition-spring);
+}
+
+.team-card:hover .team-card__info {
+  transform: translateY(0);
+}
+
+.team-card__name {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--text-light);
+  margin-bottom: 0.25rem;
+}
+
+.team-card__role {
+  font-size: var(--text-sm);
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.team-card__bio {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all var(--transition-base);
+  transition-delay: 0.1s;
+}
+
+.team-card:hover .team-card__bio {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 1024px) {
+  .team__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .team__grid {
+    grid-template-columns: 1fr;
+  }
+}
