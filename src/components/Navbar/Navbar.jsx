@@ -34,6 +34,7 @@ export default function Navbar() {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} id="navbar">
       <div className="navbar__inner">
         <a className="navbar__logo" href="#" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+          <img className="navbar__logo-icon" src="/chromex-logo.png" width="36" height="36" alt="" />
           <span>CHROMEX</span>
         </a>
 
